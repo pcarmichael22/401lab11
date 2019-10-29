@@ -37,6 +37,8 @@ module.exports = (req, res, next) => {
 
   function _authenticate(user) {
     if ( user ) {
+      req.user = user; // SOLUTION
+      req.token = user.generateToken(); // SOLUTION
       next();
     }
     else {

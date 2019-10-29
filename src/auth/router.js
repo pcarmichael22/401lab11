@@ -20,10 +20,6 @@ authRouter.post('/signup', (req, res, next) => {
 });
 
 authRouter.post('/signin', auth, (req, res, next) => {
-  console.log('here 4')
-  console.log('middleware user put here?')
-  console.log(req.user)
-  console.log(req.token)
   res.cookie('auth', req.token);
   res.send(req.token);
 });
